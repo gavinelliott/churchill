@@ -9,54 +9,73 @@
 
 <main id="content" role="main">
   <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Tool for policy makers
+      </h1>
+      <p class="text">Churchill aims to support Policy Makers to safely explore data by geography, time and characteristics. To help them determine what questions to ask next and focus communication with analysts.</p>
+    </div>
+  </div>
+  <br/>
+  <div class="grid-row">
+    <div class="column-one-third">
+      <form method="post">
+        <div class="search">
+          <label for="search-box" class="form-label">
+            <span class="heading-small">
+              Search by local authority
+            </span>
+          </label>
+
+          <input type="search" class="form-control search-box" id="search-box"
+            name="nino" autocomplete="off" value="{{nino if nino}}" />
+          <button type="submit" class="button search-button">Search</button>
+        </div>
+      </form>
+
+      <form class="full">
+        <div class="form-group full">
+          <fieldset>
+          <legend>
+            <span class="form-label-bold hidden">
+              What is your date of birth?
+            </span>
+          </legend>
+          <div class="form-date full">
+            <div class="date-from form-group">
+              <label class="form-label-bold" for="date-from">From</label>
+              <input class="form-control" id="date-from" name="date-from" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="from-year-hint">
+            </div>
+
+            <div class=" date-to form-group">
+              <label class="form-label-bold" for="date-to">To</label>
+              <input class="form-control" id="date-to" name="date-to" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+          </div>
+          </fieldset>
+        </div>
+      </form>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="select-box">Choose data type</label>
+        <select class="form-control full" id="select-box">
+          <option>Line chart</option>
+          <option>Bar chart</option>
+          <option>Other chart</option>
+        </select>
+      </div>
+
+      <button class="button">
+        Continue
+      </button>
+
+
+
+    </div>
 
     <div class="column-two-thirds">
-
-      <h1 class="heading-xlarge">
-        The GOV.UK prototype kit
-        <span class="heading-secondary">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
-
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="heading-medium">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-			<h2 class="heading-medium">Examples and documentation</h2>
-
-			<ul class="list list-bullet">
-				<li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-				<li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
-			</ul>
-
-      <h2 class="heading-medium">Other resources</h2>
-
-			<ul class="list list-bullet">
-				<li>
-					<a href="https://govuk-elements.herokuapp.com/snippets/">
-						Guide to GOV.UK Elements
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/service-manual">
-						Service design manual
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/design-principles">
-						Government Digital Service Design Principles
-					</a>
-				</li>
-			</ul>
-
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9365869.923927074!2d-12.392367258360975!3d55.03288908023021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2suk!4v1481325273485" width="600" height="700" frameborder="0" style="border:1" allowfullscreen></iframe>
+      <!--<img src="/public/images/map.png" alt="Map" style="width: 100%;"/>-->
     </div>
   </div>
 </main>
