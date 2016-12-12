@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Churchill
+{% endblock %}
+
+
+{% block content %}
+<script src="/public/javascripts/Chart.js"></script>
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-one-third margin-top">
+      <form method="post">
+        <div class="search">
+          <label for="search-box" class="form-label">
+            <span class="heading-small">
+              Search by local authority
+            </span>
+          </label>
+
+          <input type="search" class="form-control search-box" id="search-box"
+            name="nino" autocomplete="off" value="{{nino if nino}}" placeholder="North Tyneside" />
+          <button type="submit" class="button search-button">Search</button>
+        </div>
+      </form>
+
+      <form class="full">
+        <div class="form-group full">
+          <fieldset>
+          <legend>
+            <span class="form-label-bold hidden">
+              What is your date of birth?
+            </span>
+          </legend>
+          <div class="form-date full">
+            <div class="date-from form-group">
+              <label class="form-label-bold" for="date-from">From</label>
+              <input class="form-control" id="date-from" name="date-from" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="from-year-hint" placeholder="January">
+            </div>
+
+            <div class=" date-to form-group">
+              <label class="form-label-bold" for="date-to">To</label>
+              <input class="form-control" id="date-to" name="date-to" type="number" pattern="[0-9]*" min="0" max="12" placeholder="June">
+            </div>
+          </div>
+          </fieldset>
+        </div>
+      </form>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="select-box">Choose data type</label>
+        <select class="form-control full" id="select-box">
+          <option>Benefit type</option>
+        </select>
+      </div>
+
+      <button class="button">
+        Search
+      </button>
+    </div>
+
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        North Tyneside
+      </h1>
+      <p class="text">People on [Benefit type] from January 2016 to June 2016 in North Tyneside relative to other Local Authorities.</p>
+      <canvas id="myChart" width="600" height="400"></canvas>
+      <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June"],
+                datasets: [{
+                    label: 'Benefit Type',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+      </div>
+  </div>
+</main>
+
+{% endblock %}
