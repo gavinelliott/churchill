@@ -6402,11 +6402,11 @@ module.exports = function() {
 			},
 			onClick: null,
 			defaultColor: 'rgba(0,0,0,0.1)',
-			defaultFontColor: '#666',
+			defaultFontColor: '#000',
 			defaultFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
 			defaultFontSize: 12,
 			defaultFontStyle: 'normal',
-			showLines: true,
+			showLines: false,
 
 			// Element defaults defined in element extensions
 			elements: {},
@@ -7421,10 +7421,10 @@ module.exports = function(Chart) {
 		// grid line settings
 		gridLines: {
 			display: true,
-			color: 'rgba(0, 0, 0, 0.1)',
-			lineWidth: 1,
+			color: 'rgba(0, 0, 0, 0.2)',
+			lineWidth: 2,
 			drawBorder: true,
-			drawOnChartArea: true,
+			drawOnChartArea: false,
 			drawTicks: true,
 			tickMarkLength: 10,
 			zeroLineWidth: 1,

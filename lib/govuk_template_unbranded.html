@@ -49,8 +49,37 @@
     <!--end global-cookie-message-->
 
 
-    <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
+    <header role="banner" id="global-header" class="with-proposition">
+      <div class="header-wrapper">
+        <div class="header-global">
+          <div class="header-logo">
+            <a href="/{{sprint}}" id="logo" class="content dwplogo">
+              DWP
+            </a>
+          </div>
+        </div>
+
+        <div class="header-proposition">
+          <div class="content">
+            <nav id="proposition-menu">
+              <a href="/{{sprint}}" id="proposition-name">{{serviceName}}</a>
+            </nav>
+          </div>
+        </div>
+      </div>
     </header>
+
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <a href="/" class="{{basicClass}}">Basic search</a>
+        </li>
+
+        <li>
+          <a href="/advanced-search" class="{{advancedClass}}">Advanced search</a>
+        </li>
+      </ul>
+    </nav>
     <!--end header-->
 
 
@@ -59,6 +88,27 @@
     {% block content %}{% endblock %}
 
     <footer class="group js-footer" id="footer" role="contentinfo">
+
+      <div class="footer-wrapper">
+        {% block footer_top %}{% endblock %}
+
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            {% block footer_support_links %}{% endblock %}
+
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+
+                {% block licence_message %}<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>{% endblock %}
+
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">{{ crown_copyright_message|default('&copy; Crown copyright')|safe }}</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!--end footer-->

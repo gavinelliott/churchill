@@ -93,41 +93,98 @@
     </div>
 
     <div class="column-two-thirds">
-      <h1 class="heading-large">
+      <h1 class="heading-xlarge" style="margin-bottom: 20px;">
         North Tyneside
       </h1>
-      <p class="text">People on [Benefit type] from January 2016 to June 2016 in North Tyneside relative to other Local Authorities.</p>
-      <canvas id="myChart" width="600" height="400"></canvas>
-      <script>
-        var ctx = document.getElementById("myChart");
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["January", "February", "March", "April", "May", "June"],
-                datasets: [{
-                    label: 'Benefit Type',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 159, 64, 0.0)'
-                    ],
-                    borderColor: [
+      <p class="text">People on [Benefit type] from January 2016 to June 2016 in North Tyneside.</p>
 
-                        'rgba(0, 67, 123, 1)'
-                    ],
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-        });
-        </script>
+      <div class="grid-row data-block">
+        <div class="column-one-third">
+          Total Claimants<br/>
+          <div class="heading-large" style="margin: 0;">4,300</div>
+        </div>
+
+        <div class="column-one-third">
+          Male<br/>
+          <div class="heading-large" style="margin: 0;">60%</div>
+        </div>
+
+        <div class="column-one-third">
+          Female<br/>
+          <div class="heading-large" style="margin: 0;">40%</div>
+        </div>
+      </div>
+
+      <div class="margin-top chart">
+        <canvas id="myChart" width="600" height="300" class="margin-top"></canvas>
+        <script>
+          var ctx = document.getElementById("myChart");
+          var myChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: ["January", "February", "March", "April", "May", "June"],
+                  datasets: [{
+                      label: 'Benefit Type',
+                      data: [12, 19, 3, 5, 2, 3],
+                      backgroundColor: [
+                          'rgba(255, 159, 64, 0.0)'
+                      ],
+                      borderColor: [
+
+                          'rgba(0, 67, 123, 1)'
+                      ],
+                      borderWidth: 2
+                  }]
+              },
+              options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:true
+                          }
+                      }]
+                  }
+              }
+          });
+          </script>
+        </div>
+        <div class="margin-top chart">
+        <canvas id="myBarChart" width="400" height="200"></canvas>
+          <script>
+          var ctx = document.getElementById("myBarChart");
+          var myBarChart = new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                  labels: ["25-34", "35-44", "45-49", "50-54", "55-59", "60-64"],
+                  datasets: [{
+                      label: '%',
+                      data: [18, 25, 19, 10, 11, 10],
+                      backgroundColor: [
+                          'rgba(0,66,125,1)',
+                          'rgba(0,66,125,1)',
+                          'rgba(0,66,125,1)',
+                          'rgba(0,66,125,1)',
+                          'rgba(0,66,125,1)',
+                          'rgba(0,66,125,1)'
+                      ],
+                      borderColor: [
+                          'rgba(0,66,125,1)'
+                      ],
+                      borderWidth: 2
+                  }]
+              },
+              options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:true
+                          }
+                      }]
+                  }
+              }
+          });
+          </script>
+        </div>
       </div>
   </div>
 </main>
